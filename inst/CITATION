@@ -1,0 +1,19 @@
+citHeader("To cite package 'GenFormR' in publications use:")
+
+year <- 2011
+
+citEntry(entry="article",
+		title = "MS/MS Data Improves Automated Determination of Molecular Formulas by Mass Spectrometry.",
+		author = personList(as.person("M. Meringer"),
+				as.person("S. Reinker"),
+				as.person("J. Zhang"),
+				as.person("A. Muller")),
+		year = 2011,
+		journal = "MATCH Commun. Math. Comput. Chem.",
+		volume = 65, 
+		pages = 259--290,
+		
+		textVersion =
+				paste("M. Meringer, S. Reinker, J. Zhang, A. Muller", year,
+						"MS/MS Data Improves Automated Determination of Molecular Formulas by Mass Spectrometry",
+						"MATCH Commun. Math. Comput. Chem.", "65","259-290.", sep=", ")) 

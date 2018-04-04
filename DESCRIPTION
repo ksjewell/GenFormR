@@ -1,0 +1,14 @@
+Package: GenFormR
+Type: Package
+Title: Use GenForm for Formula Generation and MS/MS Annotation in R
+Version: 0.1.3
+Date: 2017-02-15
+Authors@R: c(
+    person("Emma", "Schymanski", email = "emma.schymanski@uni.lu", role = c("aut", "cre")),
+	person("Markus","Meringer", email="m.meringer@gmx.de",role=c("aut")))
+Description: This provides interactions with GenForm in R. GenForm, authored by Markus 
+    Meringer, should be downloaded from https://sourceforge.net/projects/genform/
+License: Artistic-2.0
+SystemRequirements: GenForm
+LazyData: TRUE
+RoxygenNote: 5.0.1
