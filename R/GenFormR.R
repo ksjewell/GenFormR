@@ -3,8 +3,10 @@
 # built into function form 26/11/2015
 # modified Jan&Feb 2017.
 # modified for upload to GitHub April 2018.
+# 
+# K. Jewell downloaded from GitHub and modified (KJ) August 2020 for use on CentOS
 
-#' Run GenForm with Various Commands
+#' Run GenForm with various Commands
 #'
 #' @description This is a wrapper function for GenForm, requiring MS, MS/MS, ion settings
 #' and directories.
@@ -56,7 +58,7 @@
 #'
 RunGenForm <- function(ms_file, msms_file, ion, GenFormDir, ResultsDir,
                        ppm=5, acc=15, elements="CHNOPS",ff="", dbe=TRUE, oei=TRUE, mz=0,
-                       exist=TRUE, an_loss=TRUE,an_loss_limit=500, sort=FALSE, cleanMSMS=FALSE) {
+                       exist=TRUE, an_loss=TRUE,an_loss_limit=500, sort=FALSE, cleanMSMS=TRUE) {
   curr_dir <- getwd()
   # check files exist
   if(!file.exists(ms_file)) {
@@ -108,8 +110,10 @@ RunGenForm <- function(ms_file, msms_file, ion, GenFormDir, ResultsDir,
     GenFormBaseCommand <- paste("GenForm ms=",ms_file," msms=",msms_file," ion=",ion," ppm=",ppm," acc=",acc,
                             " el=",elements,other_options,sep="")
   }
+  # KJ added 
+  GenFormBaseCommand <- paste0(GenFormDir, GenFormBaseCommand)
+  # browser()
   GenFormCommand <- paste(GenFormBaseCommand," out=",out_file,sep="")
-  setwd(GenFormDir)
   system(GenFormCommand)
   #write(logmsg1, log_file,append=TRUE)
   write(GenFormCommand, log_file,append=TRUE)
